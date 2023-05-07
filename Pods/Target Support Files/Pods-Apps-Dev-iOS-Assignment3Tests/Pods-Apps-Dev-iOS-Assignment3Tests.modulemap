@@ -1,0 +1,6 @@
+framework module Pods_Apps_Dev_iOS_Assignment3Tests {
+  umbrella header "Pods-Apps-Dev-iOS-Assignment3Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
