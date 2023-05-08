@@ -67,7 +67,7 @@
 		67CBA89EE464F3E3B85C1A887125DB7F /* Pods-Apps-Dev-iOS-Assignment3-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Apps-Dev-iOS-Assignment3-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7D576A4DFE033CC6AAED699E8C178651 /* Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests-dummy.m"; sourceTree = "<group>"; };
 		9A3F26D32BEAE89E6D785189F3ACDC83 /* Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A33AFD899B509D3B554B7CCE34237DD4 /* Pods-Apps-Dev-iOS-Assignment3-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Apps-Dev-iOS-Assignment3-frameworks.sh"; sourceTree = "<group>"; };
 		B1A201B753C3A876412143472BE3C152 /* Pods-Apps-Dev-iOS-Assignment3-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Apps-Dev-iOS-Assignment3-dummy.m"; sourceTree = "<group>"; };
 		B20F2C5254720BA21CF6B2454F96FAEA /* Pods-Apps-Dev-iOS-Assignment3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Apps-Dev-iOS-Assignment3Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		EE0F5B8231A34678B86513A8187AF8CD /* Pods-Apps-Dev-iOS-Assignment3Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Apps-Dev-iOS-Assignment3Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F7C0E7D451DF09B403F4E7B1E4343892 /* iOSDropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSDropDown-prefix.pch"; sourceTree = "<group>"; };
 		FA59E8C66870743E57A9B48B87CC5F6E /* Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FCEEA8BBD9DA8D0CCE0A3092B20E3FA7 /* iOSDropDown */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSDropDown; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCEEA8BBD9DA8D0CCE0A3092B20E3FA7 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD24DD0D339836390D10C513D8E04EE2 /* Pods-Apps-Dev-iOS-Assignment3Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Apps-Dev-iOS-Assignment3Tests-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,7 +207,6 @@
 				4A2DBD197BF8C4A95CF11BB10B92F671 /* iOSDropDown.swift */,
 				4304240AA3F97B8DA63732BED71C92CD /* Support Files */,
 			);
-			name = iOSDropDown;
 			path = iOSDropDown;
 			sourceTree = "<group>";
 		};
@@ -224,7 +223,7 @@
 		C60A02176B542501088A9A231FBB3D07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FCEEA8BBD9DA8D0CCE0A3092B20E3FA7 /* iOSDropDown */,
+				FCEEA8BBD9DA8D0CCE0A3092B20E3FA7 /* iOSDropDown.framework */,
 				CD45573AD908B0BD94B82D4466A3C6AE /* Pods-Apps-Dev-iOS-Assignment3 */,
 				CDB62042C66DBCABC28C5CBDF14FF64C /* Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests */,
 				18B2B0F884E48CCB11939DB7014432D1 /* Pods-Apps-Dev-iOS-Assignment3Tests */,
@@ -313,7 +312,7 @@
 			);
 			name = iOSDropDown;
 			productName = iOSDropDown;
-			productReference = FCEEA8BBD9DA8D0CCE0A3092B20E3FA7 /* iOSDropDown */;
+			productReference = FCEEA8BBD9DA8D0CCE0A3092B20E3FA7 /* iOSDropDown.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		47D2BB3D3F97E8526EB66DC5C07F9FFA /* Pods-Apps-Dev-iOS-Assignment3Tests */ = {
@@ -507,7 +506,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/iOSDropDown/iOSDropDown-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/iOSDropDown/iOSDropDown-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -857,7 +856,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/iOSDropDown/iOSDropDown-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/iOSDropDown/iOSDropDown-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
