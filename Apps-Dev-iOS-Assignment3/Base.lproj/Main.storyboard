@@ -241,6 +241,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Home"/>
+                                <connections>
+                                    <action selector="returnToHome:" destination="c0V-D4-lqb" eventType="touchUpInside" id="8gb-QC-2Rm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4LK-J9-pHG"/>

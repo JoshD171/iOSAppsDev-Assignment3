@@ -15,6 +15,9 @@ class ResultsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func returnToHome(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     
     @IBOutlet weak var MoveToNextLevel: UIButton!
     
