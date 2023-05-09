@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D25-MY-NI3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D25-MY-NI3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -75,8 +76,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shapelingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSR-lo-1wM">
-                                <rect key="frame" x="128" y="103" width="136" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shapelingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSR-lo-1wM">
+                                <rect key="frame" x="128" y="103" width="137" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -141,6 +142,12 @@
                                     </textField>
                                 </subviews>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgv-hK-bmn">
+                                <rect key="frame" x="16" y="108" width="85" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" name="white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Guu-Ui-cS3"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -149,12 +156,15 @@
                             <constraint firstItem="PSR-lo-1wM" firstAttribute="leading" secondItem="Guu-Ui-cS3" secondAttribute="leading" constant="128" id="Am7-dq-qm2"/>
                             <constraint firstItem="Qm6-cU-zn5" firstAttribute="leading" secondItem="GF2-Jg-qWl" secondAttribute="leading" id="Heu-qy-pcd"/>
                             <constraint firstItem="yu6-1u-rZc" firstAttribute="leading" secondItem="Guu-Ui-cS3" secondAttribute="leading" constant="171" id="Iqq-Eu-CdA"/>
+                            <constraint firstItem="Sgv-hK-bmn" firstAttribute="centerY" secondItem="PSR-lo-1wM" secondAttribute="centerY" id="Kb9-0W-Mqd"/>
                             <constraint firstItem="Qm6-cU-zn5" firstAttribute="trailing" secondItem="GF2-Jg-qWl" secondAttribute="trailing" id="Q43-HP-huM"/>
                             <constraint firstItem="PSR-lo-1wM" firstAttribute="centerX" secondItem="Qm6-cU-zn5" secondAttribute="centerX" id="QdJ-6U-omU"/>
                             <constraint firstItem="PSR-lo-1wM" firstAttribute="top" secondItem="Guu-Ui-cS3" secondAttribute="top" id="Tp3-Gp-5Oo"/>
+                            <constraint firstItem="PSR-lo-1wM" firstAttribute="leading" secondItem="Sgv-hK-bmn" secondAttribute="trailing" constant="27" id="Wto-eR-lzd"/>
                             <constraint firstItem="Guu-Ui-cS3" firstAttribute="bottom" secondItem="t63-sL-UQL" secondAttribute="bottom" constant="46" id="f40-5Q-4qb"/>
                             <constraint firstItem="PSR-lo-1wM" firstAttribute="centerX" secondItem="e5s-W0-rcG" secondAttribute="centerX" id="k0m-YZ-vF5"/>
                             <constraint firstItem="PSR-lo-1wM" firstAttribute="trailing" secondItem="t63-sL-UQL" secondAttribute="trailing" id="kob-ES-NB2"/>
+                            <constraint firstItem="Sgv-hK-bmn" firstAttribute="leading" secondItem="Guu-Ui-cS3" secondAttribute="leading" constant="16" id="prn-Bb-3rg"/>
                             <constraint firstItem="yu6-1u-rZc" firstAttribute="top" secondItem="PSR-lo-1wM" secondAttribute="bottom" constant="21" id="s4p-E0-up8"/>
                             <constraint firstItem="Qm6-cU-zn5" firstAttribute="top" secondItem="yu6-1u-rZc" secondAttribute="bottom" constant="29" id="yho-Xm-Vfz"/>
                         </constraints>
@@ -165,6 +175,7 @@
                         <outlet property="DropDownView" destination="8QY-Zh-cp2" id="c2t-5u-vic"/>
                         <outlet property="LevelValue" destination="yu6-1u-rZc" id="eo5-iU-QBE"/>
                         <outlet property="ShapeView" destination="GF2-Jg-qWl" id="Xz1-SU-Tqv"/>
+                        <outlet property="timerLabel" destination="Sgv-hK-bmn" id="KIc-qo-H44"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qef-ie-id9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -304,6 +315,9 @@
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
