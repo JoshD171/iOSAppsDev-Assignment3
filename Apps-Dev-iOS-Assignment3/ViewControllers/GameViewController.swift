@@ -10,21 +10,41 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    @IBOutlet weak var LevelValue: UILabel!
+    
+    @IBOutlet weak var ShapeView: UIImageView!
+    
+    @IBOutlet weak var CheckForCorrectAnswer: UIButton!
+    
+    var timer = Timer()
+    var remainingTime = 30
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
+            timer in self.countdown()
+        }
     }
     
-    
-    @IBOutlet weak var LevelValue: UILabel!
-    
-    
-    @IBOutlet weak var ShapeView: UIImageView!
-    
-    
-    @IBOutlet weak var CheckForCorrectAnswer: UIButton!
-    
+    func countdown() {
+        remainingTime -= 1
+        timerLabel.text = "Time: \(remainingTime)"
+        if remainingTime <= 5 {
+            timerLabel.textColor = .red
+        }
+        if remainingTime == 0 {
+            timer.invalidate()
+            
+            let vc = storyboard?.instantiateViewController(identifier: "ResultsViewController") as! ResultsViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.navigationItem.setHidesBackButton(true, animated: true)
+        }
+    }
     
     @IBAction func CheckDropDownSelected(_ sender: Any) {
     }
