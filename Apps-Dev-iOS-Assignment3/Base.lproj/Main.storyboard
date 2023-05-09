@@ -233,6 +233,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Next Level"/>
+                                <connections>
+                                    <action selector="goToNextLevel:" destination="c0V-D4-lqb" eventType="touchUpInside" id="kBc-Zm-hQi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOs-xb-B9T">
                                 <rect key="frame" x="153" y="496" width="87" height="45"/>

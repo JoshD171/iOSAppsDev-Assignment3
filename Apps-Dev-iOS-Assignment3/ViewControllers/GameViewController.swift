@@ -20,11 +20,14 @@ class GameViewController: UIViewController {
     
     var timer = Timer()
     var remainingTime = 30
+    var level = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        LevelValue.text = "Level \(level)"
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             timer in self.countdown()
