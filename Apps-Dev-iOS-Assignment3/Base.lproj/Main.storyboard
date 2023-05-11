@@ -101,6 +101,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Check Answer"/>
                                 <connections>
                                     <action selector="CheckDropDownSelected:" destination="Y6x-UF-I5h" eventType="editingDidEnd" id="ZJM-zf-9IL"/>
+                                    <action selector="clickCheckAnswer:" destination="Y6x-UF-I5h" eventType="touchUpInside" id="l9l-xO-8nt"/>
                                     <segue destination="c0V-D4-lqb" kind="show" id="dLl-T4-lXp"/>
                                 </connections>
                             </button>

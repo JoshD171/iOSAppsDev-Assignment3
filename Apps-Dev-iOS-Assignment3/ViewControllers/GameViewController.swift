@@ -7,6 +7,7 @@
 
 import iOSDropDown
 import UIKit
+var level = 1
 
 class GameViewController: UIViewController {
 
@@ -20,7 +21,6 @@ class GameViewController: UIViewController {
     
     var timer = Timer()
     var remainingTime = 30
-    var level = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,9 @@ class GameViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             timer in self.countdown()
         }
+    }
+    @IBAction func clickCheckAnswer(_ sender: UIButton) {
+        timer.invalidate()
     }
     
     func countdown() {

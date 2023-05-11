@@ -18,7 +18,7 @@ class ResultsViewController: UIViewController {
     @IBAction func goToNextLevel(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(identifier: "GameViewController") as! GameViewController
         self.navigationController?.pushViewController(vc, animated: true)
-        vc.level += 1
+        level += 1
         vc.navigationItem.setHidesBackButton(true, animated: true)
     }
     @IBAction func returnToHome(_ sender: UIButton) {
