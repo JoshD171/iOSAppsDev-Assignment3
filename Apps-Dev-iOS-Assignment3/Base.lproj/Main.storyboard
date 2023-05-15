@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D25-MY-NI3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D25-MY-NI3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -176,6 +176,10 @@
                         <outlet property="DropDownView" destination="8QY-Zh-cp2" id="c2t-5u-vic"/>
                         <outlet property="LevelValue" destination="yu6-1u-rZc" id="eo5-iU-QBE"/>
                         <outlet property="ShapeView" destination="GF2-Jg-qWl" id="Xz1-SU-Tqv"/>
+                        <outlet property="colourData" destination="Duh-Gg-GlT" id="LqE-vb-KhV"/>
+                        <outlet property="colourDropDown" destination="Duh-Gg-GlT" id="DVT-Qv-Pfs"/>
+                        <outlet property="shapeData" destination="U1b-7j-6pM" id="W7X-uC-d4p"/>
+                        <outlet property="shapeDropDown" destination="U1b-7j-6pM" id="6aK-oe-c8G"/>
                         <outlet property="timerLabel" destination="Sgv-hK-bmn" id="KIc-qo-H44"/>
                     </connections>
                 </viewController>
