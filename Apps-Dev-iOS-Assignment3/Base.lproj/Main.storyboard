@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -115,12 +116,6 @@
                                 <rect key="frame" x="56" y="477" width="281" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1b-7j-6pM">
-                                        <rect key="frame" x="85" y="56" width="111" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a shape" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zff-3Y-7VE">
                                         <rect key="frame" x="79" y="16" width="123" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -135,12 +130,48 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Duh-Gg-GlT">
-                                        <rect key="frame" x="85" y="159" width="111" height="34"/>
+                                    <button toolTip="Type of Colour" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZ2-6X-yea">
+                                        <rect key="frame" x="102" y="168" width="86" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <menu key="menu" title="Colours" id="QeO-QB-XJG">
+                                            <menuOptions key="menuOptions" singleSelection="YES"/>
+                                            <children>
+                                                <command title="Red" id="oJZ-M7-hhe"/>
+                                                <command title="Green" id="aCs-eP-KLC"/>
+                                                <command title="Yellow" id="5Hj-l6-QIn"/>
+                                                <command title="Purple" id="rL6-tk-IcQ"/>
+                                                <command title="Blue" id="zLq-Yd-3aY"/>
+                                                <command title="Orange" id="r3s-es-kzf"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Colours" image="highlighter" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="colourChecker:" destination="Y6x-UF-I5h" eventType="primaryActionTriggered" id="OUh-Fc-o4z"/>
+                                        </connections>
+                                    </button>
+                                    <button toolTip="Type of Shape" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-fK-NXN">
+                                        <rect key="frame" x="99" y="55" width="84" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <menu key="menu" title="Shapes" id="Sfh-tf-Gzz">
+                                            <menuOptions key="menuOptions" singleSelection="YES"/>
+                                            <children>
+                                                <command title="Circle" id="Dgs-W2-TRs"/>
+                                                <command title="Triangle" id="rLt-Uf-BAz"/>
+                                                <command title="Rectangle" id="B7j-SM-3jn"/>
+                                                <command title="Square" id="Mhk-U1-G0Z"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Shape" image="squareshape" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shapeChecker:" destination="Y6x-UF-I5h" eventType="primaryActionTriggered" id="a9V-bz-smu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgv-hK-bmn">
@@ -176,10 +207,8 @@
                         <outlet property="DropDownView" destination="8QY-Zh-cp2" id="c2t-5u-vic"/>
                         <outlet property="LevelValue" destination="yu6-1u-rZc" id="eo5-iU-QBE"/>
                         <outlet property="ShapeView" destination="GF2-Jg-qWl" id="Xz1-SU-Tqv"/>
-                        <outlet property="colourData" destination="Duh-Gg-GlT" id="LqE-vb-KhV"/>
-                        <outlet property="colourDropDown" destination="Duh-Gg-GlT" id="DVT-Qv-Pfs"/>
-                        <outlet property="shapeData" destination="U1b-7j-6pM" id="W7X-uC-d4p"/>
-                        <outlet property="shapeDropDown" destination="U1b-7j-6pM" id="6aK-oe-c8G"/>
+                        <outlet property="colourDropDown" destination="iZ2-6X-yea" id="4B7-YV-1r6"/>
+                        <outlet property="shapeDropDown" destination="4CK-fK-NXN" id="BfB-FL-zmv"/>
                         <outlet property="timerLabel" destination="Sgv-hK-bmn" id="KIc-qo-H44"/>
                     </connections>
                 </viewController>
@@ -324,6 +353,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="highlighter" catalog="system" width="128" height="120"/>
+        <image name="squareshape" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
