@@ -19,15 +19,24 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var CheckForCorrectAnswer: UIButton!
     
-    @IBOutlet var shapeData: [DropDown]!
+    @IBOutlet weak var shapeDropDown: UIButton!
     
-    @IBOutlet var colourData: [DropDown]!
     
-    @IBOutlet var shapeDropDown: DropDown!
+    @IBOutlet weak var colourDropDown: UIButton!
     
-    @IBOutlet var colourDropDown: DropDown!
     
-    let options = Options()
+    @IBAction func colourChecker(_ sender: Any) {
+    }
+    
+    
+    @IBAction func shapeChecker(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
+    var currentShape = Shape()
     var timer = Timer()
     var remainingTime = 30
     
@@ -36,119 +45,35 @@ class GameViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.isHidden = true
+        setupShapeDropDown()
+        setupColourDropDown()
+        updateButtonInteraction()
         
         LevelValue.text = "Level \(level)"
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             timer in self.countdown()
         }
-        
-        
-        shapeDropDown.optionArray = options.shapes
-        shapeDropDown.optionIds = options.ids
-        shapeDropDown.checkMarkEnabled = false
-        shapeDropDown.semanticContentAttribute = .forceRightToLeft
-        shapeDropDown.textColor = .red
-        CheckForCorrectAnswer.isHidden = true
-        
-        colourDropDown.optionArray = options.colours
-        colourDropDown.optionIds = options.ids
-        colourDropDown.checkMarkEnabled = false
-        colourDropDown.semanticContentAttribute = .forceRightToLeft
-        colourDropDown.textColor = .red
-        
-        shapeDropDown.arrowSize = 10
-        // Custom DropDown Data
-        shapeData[0].optionArray = options.booleanData
-        shapeData[2].optionArray = options.colours
-        shapeData[3].optionArray = options.colours
-        shapeData[4].optionArray = options.height
-        shapeData[5].optionArray = options.height
-        shapeData[6].optionArray = options.booleanData
-        shapeData[0].isSearchEnable = false
-        shapeData[2].isSearchEnable = false
-        shapeData[3].isSearchEnable = false
-        shapeData[4].isSearchEnable = false
-        shapeData[5].isSearchEnable = false
-        shapeData[6].isSearchEnable = false
-        // Custom Dropdown didSelect
-
-        shapeData[0].didSelect(completion: { selected, _, _ in
-            self.shapeDropDown.isSearchEnable = Bool(selected)!
-        })
-
-        shapeData[2].didSelect(completion: { selected, _, _ in
-            if #available(iOS 11.0, *) {
-                self.shapeDropDown.selectedRowColor = UIColor(named: selected)!
-            } else {
-                // Fallback on earlier versions
-            }
-        })
-        shapeData[3].didSelect(completion: { selected, _, _ in
-            if #available(iOS 11.0, *) {
-                self.shapeDropDown.rowBackgroundColor = UIColor(named: selected)!
-            } else {
-                // Fallback on earlier versions
-            }
-        })
-        shapeData[4].didSelect(completion: { selected, _, _ in
-            self.shapeDropDown.listHeight = CGFloat(Float(selected)!)
-        })
-        shapeData[5].didSelect(completion: { selected, _, _ in
-            self.shapeDropDown.rowHeight = CGFloat(Float(selected)!)
-        })
-        shapeData[6].didSelect(completion: { selected, _, _ in
-            self.shapeDropDown.hideOptionsWhenSelect = Bool(selected)!
-        })
-        
-        colourDropDown.arrowSize = 10
-        // Custom DropDown Data
-        colourData[0].optionArray = options.booleanData
-        colourData[2].optionArray = options.colours
-        colourData[3].optionArray = options.colours
-        colourData[4].optionArray = options.height
-        colourData[5].optionArray = options.height
-        colourData[6].optionArray = options.booleanData
-        colourData[0].isSearchEnable = false
-        colourData[2].isSearchEnable = false
-        colourData[3].isSearchEnable = false
-        colourData[4].isSearchEnable = false
-        colourData[5].isSearchEnable = false
-        colourData[6].isSearchEnable = false
-        // Custom Dropdown didSelect
-
-        colourData[0].didSelect(completion: { selected, _, _ in
-            self.colourDropDown.isSearchEnable = Bool(selected)!
-        })
-
-        colourData[2].didSelect(completion: { selected, _, _ in
-            if #available(iOS 11.0, *) {
-                self.colourDropDown.selectedRowColor = UIColor(named: selected)!
-            } else {
-                // Fallback on earlier versions
-            }
-        })
-        colourData[3].didSelect(completion: { selected, _, _ in
-            if #available(iOS 11.0, *) {
-                self.colourDropDown.rowBackgroundColor = UIColor(named: selected)!
-            } else {
-                // Fallback on earlier versions
-            }
-        })
-        colourData[4].didSelect(completion: { selected, _, _ in
-            self.colourDropDown.listHeight = CGFloat(Float(selected)!)
-        })
-        colourData[5].didSelect(completion: { selected, _, _ in
-            self.colourDropDown.rowHeight = CGFloat(Float(selected)!)
-        })
-        colourData[6].didSelect(completion: { selected, _, _ in
-            self.colourDropDown.hideOptionsWhenSelect = Bool(selected)!
-        })
-
     }
     
     @IBAction func clickCheckAnswer(_ sender: UIButton) {
         timer.invalidate()
+       
+        // Check if color and shape match the current shape
+            let selectedColor = colourDropDown.title(for: .normal) ?? ""
+            let selectedShape = shapeDropDown.title(for: .normal) ?? ""
+            
+            let correctColor = currentShape.color.description // Convert UIColor to string
+            let correctShape = currentShape.shape
+            
+            let isCorrect = selectedColor == correctColor && selectedShape == correctShape
+            
+            let message = isCorrect ? "Correct!" : "Incorrect!"
+            
+            let alert = UIAlertController(title: "Result", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        
     }
     
     func countdown() {
@@ -171,6 +96,79 @@ class GameViewController: UIViewController {
     
     
     @IBOutlet weak var DropDownView: UIView!
+    
+    func getColor(for title: String) -> UIColor {
+        switch title {
+        case "Red":
+            return .red
+        case "Green":
+            return .green
+        case "Yellow":
+            return .yellow
+        case "Purple":
+            return .purple
+        case "Blue":
+            return .blue
+        case "Orange":
+            return .orange
+        default:
+            return .clear
+        }
+    }
+    
+    func updateButtonInteraction() {
+        // Check if both shape and color are selected
+        let isShapeSelected = shapeDropDown.title(for: .normal) != nil
+        let isColorSelected = colourDropDown.title(for: .normal) != nil
+        
+        // Enable the button if both shape and color are selected
+        CheckForCorrectAnswer.isEnabled = isShapeSelected && isColorSelected
+    }
+  
+    func setupShapeDropDown() {
+        let shapeButtonClosure = { [weak self] (action: UIAction) in
+                guard let self = self else { return }
+                self.shapeDropDown.setTitle(action.title, for: .normal)
+                self.currentShape.shape = action.title // Update current shape
+                self.updateButtonInteraction() // Update button interaction state
+            }
+         
+         // ...
+
+         shapeDropDown.menu = UIMenu(children: [
+             UIAction(title: "Circle", handler: shapeButtonClosure),
+             UIAction(title: "Triangle", handler: shapeButtonClosure),
+             UIAction(title: "Rectangle", handler: shapeButtonClosure),
+             UIAction(title: "Square", handler: shapeButtonClosure)
+         ])
+         shapeDropDown.showsMenuAsPrimaryAction = true
+     }
+
+     func setupColourDropDown() {
+         let colourButtonClosure = { [weak self] (action: UIAction) in
+                 guard let self = self else { return }
+                 self.colourDropDown.setTitle(action.title, for: .normal)
+                 self.currentShape.color = self.getColor(for: action.title) // Update current color
+                 self.updateButtonInteraction() // Update button interaction state
+             }
+         
+         // ...
+
+         colourDropDown.menu = UIMenu(children: [
+             UIAction(title: "Red", handler: colourButtonClosure),
+             UIAction(title: "Green", handler: colourButtonClosure),
+             UIAction(title: "Yellow", handler: colourButtonClosure),
+             UIAction(title: "Purple", handler: colourButtonClosure),
+             UIAction(title: "Blue", handler: colourButtonClosure),
+             UIAction(title: "Orange", handler: colourButtonClosure)
+         ])
+         colourDropDown.showsMenuAsPrimaryAction = true
+    }
+    
+    
+    
+    
+    
     
     /*
     // MARK: - Navigation
