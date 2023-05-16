@@ -23,16 +23,16 @@ class ResultsViewController: UIViewController {
     
     @IBOutlet weak var LevelNumber: UILabel!
     
-
-    
     
     @IBAction func goToNextLevel(_ sender: UIButton) {
+        // Return back to the game screen
         let vc = storyboard?.instantiateViewController(identifier: "GameViewController") as! GameViewController
         self.navigationController?.pushViewController(vc, animated: true)
-        level += 1
+        level += 1 // Increase the next level
         vc.navigationItem.setHidesBackButton(true, animated: true)
     }
     @IBAction func returnToHome(_ sender: UIButton) {
+        // Return to the Main screen
         self.navigationController?.popToRootViewController(animated: true)
     }
     

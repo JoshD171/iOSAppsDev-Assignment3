@@ -10,8 +10,7 @@ enum ShapeType: String, CaseIterable {
     
     var description: String {
         return rawValue.lowercased()
-        
-        }
+    }
 }
 
 class ShapeView: UIView {
@@ -26,10 +25,13 @@ class ShapeView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.backgroundColor = UIColor.clear
+        
     }
     
     
     override func draw(_ rect: CGRect) {
+        
+        // Create shape dimension
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.setFillColor(color.cgColor)
 

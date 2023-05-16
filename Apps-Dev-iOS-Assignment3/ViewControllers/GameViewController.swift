@@ -12,28 +12,17 @@ var level = 1
 class GameViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
-    
     @IBOutlet weak var LevelValue: UILabel!
-    
     @IBOutlet weak var ShapeView: ShapeView!
-    
     @IBOutlet weak var CheckForCorrectAnswer: UIButton!
-    
     @IBOutlet weak var shapeDropDown: UIButton!
-    
-    
     @IBOutlet weak var colourDropDown: UIButton!
-    
     
     @IBAction func colourChecker(_ sender: Any) {
     }
     
-    
     @IBAction func shapeChecker(_ sender: Any) {
     }
-    
-    
-    
 
     var timer = Timer()
     var remainingTime = 30
@@ -45,8 +34,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.isHidden = true
@@ -60,12 +47,15 @@ class GameViewController: UIViewController {
         
         LevelValue.text = "Level \(level)"
         
+        // Start game timer
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             timer in self.countdown()
         }
     }
     
     private func generateRandomShape() -> ShapeView {
+        
+        // Generate random shapes with randomized color
         let shapeTypes: [ShapeType] = [.circle, .square, .triangle, .pentagon, .hexagon]
         let colors: [UIColor] = [.red, .green, .yellow, .purple, .blue, .orange]
 
@@ -83,24 +73,31 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func clickCheckAnswer(_ sender: UIButton) {
+        
+        // Check answer after player choose the type of shape and its color
         let selectedColor = colourDropDown.title(for: .normal) ?? ""
-            let selectedShape = shapeDropDown.title(for: .normal) ?? ""
-
-            let isCorrectShape = selectedShape.lowercased() == correctShape.lowercased()
-            let isCorrectColor = selectedColor.lowercased() == correctColour.colorName?.lowercased()
-
-            var message = ""
-            if isCorrectShape && isCorrectColor {
-                message = "Correct!"
+        let selectedShape = shapeDropDown.title(for: .normal) ?? ""
+        let isCorrectShape = selectedShape.lowercased() == correctShape.lowercased()
+        let isCorrectColor = selectedColor.lowercased() == correctColour.colorName?.lowercased()
+        
+        // Display alert message if the player's answer is correct or they have the wrong shape and/or color
+        var message = ""
+        if isCorrectShape && isCorrectColor {
+            message = "Correct!"
+            
+        } else {
+            if !isCorrectShape && !isCorrectColor {
+                message = "Incorrect shape and incorrect color"
+                
+            } else if !isCorrectShape {
+                message = "Incorrect shape"
+                
             } else {
-                if !isCorrectShape && !isCorrectColor {
-                    message = "Incorrect shape and incorrect color"
-                } else if !isCorrectShape {
-                    message = "Incorrect shape"
-                } else {
-                    message = "Incorrect color"
-                }
+                message = "Incorrect color"
+                
             }
+            
+        }
 
         let alert = UIAlertController(title: "Result", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
@@ -112,44 +109,30 @@ class GameViewController: UIViewController {
                 
             }))
             present(alert, animated: true, completion: nil)
+
         
-        if remainingTime == 0 && !isCorrectShape && !isCorrectColor {
-            showNoTimeRemainingViewController()
+        // Stop timer if the answer is correct
+        if isCorrectColor && isCorrectShape {
+            timer.invalidate()
+            
         }
-
-            if isCorrectColor && isCorrectShape {
-                timer.invalidate()
-
-                // Generate a new random shape for the next level
-                let nextShape = generateRandomShape()
-                shapeDropDown.setTitle("", for: .normal)
-                colourDropDown.setTitle("", for: .normal)
-
-                // Update the button interaction state
-                updateButtonInteraction()
-
-                // Restart the timer for the next level
-                self.remainingTime = 30
-                timerLabel.text = "Time: \(remainingTime)"
-                timerLabel.textColor = .black
-                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                    self.countdown()
-                }
-            }
     }
     
     private func showNoTimeRemainingViewController() {
+        // Show no time remain page
         let noTimeRemainingViewController = storyboard?.instantiateViewController(identifier: "NoTimeRemainingViewController") as! NoTimeRemainingViewController
         navigationController?.pushViewController(noTimeRemainingViewController, animated: true)
         noTimeRemainingViewController.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     func countdown() {
+        // Count down timer by 1 sec and change the timer color to red when there is 5 sec remaining to warn the player
         remainingTime -= 1
         timerLabel.text = "Time: \(remainingTime)"
         if remainingTime <= 5 {
             timerLabel.textColor = .red
         }
+        // Display time ran out page if timer reached 0
         if remainingTime == 0 {
             timer.invalidate()
             showNoTimeRemainingViewController()
@@ -191,11 +174,12 @@ class GameViewController: UIViewController {
     }
   
     func setupShapeDropDown() {
+        
+        // Setup dropdown with list of shape to choose from
         let shapeButtonClosure = { [weak self] (action: UIAction) in
             guard let self = self else { return }
             self.shapeDropDown.setTitle(action.title, for: .normal)
             self.currentShape.shapeType = ShapeType(rawValue: action.title) ?? .circle // Update current shape type
-//            print(self.currentShape.shapeType)
             self.updateButtonInteraction() // Update button interaction state
         }
         
@@ -210,13 +194,15 @@ class GameViewController: UIViewController {
     }
 
      func setupColourDropDown() {
-         let colourButtonClosure = { [weak self] (action: UIAction) in
-                 guard let self = self else { return }
-                 self.colourDropDown.setTitle(action.title, for: .normal)
-                 self.currentShape.color = self.getColor(for: action.title) // Update current color
-//             print(self.currentShape.color)
-                 self.updateButtonInteraction() // Update button interaction state
-             }
+         
+         // Setup dropdown with list of color to choose from
+         let colourButtonClosure = { [weak self] (action: UIAction)
+             in guard let self = self else { return }
+             self.colourDropDown.setTitle(action.title, for: .normal)
+             self.currentShape.color = self.getColor(for: action.title) // Update current color
+             self.updateButtonInteraction() // Update button interaction state
+             
+         }
          
 
          colourDropDown.menu = UIMenu(children: [
@@ -229,9 +215,6 @@ class GameViewController: UIViewController {
          ])
          colourDropDown.showsMenuAsPrimaryAction = true
     }
-    
-    
-    
     
     
     
