@@ -9,7 +9,7 @@ enum ShapeType: String, CaseIterable {
     case hexagon
     
     var description: String {
-            return rawValue
+        return rawValue.lowercased()
         }
 }
 

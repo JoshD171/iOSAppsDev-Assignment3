@@ -38,6 +38,8 @@ class GameViewController: UIViewController {
     var timer = Timer()
     var remainingTime = 30
     var currentShape: ShapeView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,7 +82,7 @@ class GameViewController: UIViewController {
         let selectedColor = colourDropDown.title(for: .normal) ?? ""
             let selectedShape = shapeDropDown.title(for: .normal) ?? ""
 
-            let correctColor = currentShape.color.description
+            let correctColor = currentShape.color.colorName ?? "Unknown"
             let correctShape = currentShape.shapeType.description
 
             let isCorrect = selectedColor == correctColor && selectedShape == correctShape
@@ -88,10 +90,18 @@ class GameViewController: UIViewController {
             let message = isCorrect ? "Correct!" : "Incorrect!"
 
             let alert = UIAlertController(title: "Result", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+                if isCorrect {
+                    // Create an instance of the ResultsViewController
+                    let resultsViewController = self?.storyboard?.instantiateViewController(identifier: "ResultsViewController") as! ResultsViewController
+                    self?.navigationController?.pushViewController(resultsViewController, animated: true)
+                    resultsViewController.navigationItem.setHidesBackButton(true, animated: true)
+                }
+            }))
             present(alert, animated: true, completion: nil)
+        
 
-        // Generate a new random shape for the next level
+            // Generate a new random shape for the next level
             let nextShape = generateRandomShape()
             shapeDropDown.setTitle("", for: .normal)
             colourDropDown.setTitle("", for: .normal)
@@ -159,25 +169,21 @@ class GameViewController: UIViewController {
   
     func setupShapeDropDown() {
         let shapeButtonClosure = { [weak self] (action: UIAction) in
-                guard let self = self else { return }
-                self.shapeDropDown.setTitle(action.title, for: .normal)
-                let randomShape = ShapeType.allCases.randomElement() ?? .circle
-                self.currentShape.shapeType = randomShape // Update current shape type
-                self.ShapeView.setNeedsDisplay() // Update the shape view
-                self.updateButtonInteraction() // Update button interaction state
-            }
-         
-         // ...
-
-         shapeDropDown.menu = UIMenu(children: [
-             UIAction(title: "Circle", handler: shapeButtonClosure),
-             UIAction(title: "Square", handler: shapeButtonClosure),
-             UIAction(title: "Triangle", handler: shapeButtonClosure),
-             UIAction(title: "Pentagon", handler: shapeButtonClosure),
-             UIAction(title: "Hexagon", handler: shapeButtonClosure)
-         ])
-         shapeDropDown.showsMenuAsPrimaryAction = true
-     }
+            guard let self = self else { return }
+            self.shapeDropDown.setTitle(action.title, for: .normal)
+            self.currentShape.shapeType = ShapeType(rawValue: action.title) ?? .circle // Update current shape type
+            self.updateButtonInteraction() // Update button interaction state
+        }
+        
+        var menuItems: [UIAction] = []
+        for shapeType in ShapeType.allCases {
+            let action = UIAction(title: shapeType.rawValue, handler: shapeButtonClosure)
+            menuItems.append(action)
+        }
+        
+        shapeDropDown.menu = UIMenu(children: menuItems)
+        shapeDropDown.showsMenuAsPrimaryAction = true
+    }
 
      func setupColourDropDown() {
          let colourButtonClosure = { [weak self] (action: UIAction) in
@@ -197,7 +203,7 @@ class GameViewController: UIViewController {
              UIAction(title: "Blue", handler: colourButtonClosure),
              UIAction(title: "Orange", handler: colourButtonClosure)
          ])
-         colourDropDown.showsMenuAsPrimaryAction = false
+         colourDropDown.showsMenuAsPrimaryAction = true
     }
     
     
@@ -231,5 +237,26 @@ extension UIView {
             return image
         }
         return nil
+    }
+}
+
+extension UIColor {
+    var colorName: String? {
+        switch self {
+        case .red:
+            return "Red"
+        case .green:
+            return "Green"
+        case .blue:
+            return "Blue"
+        case .yellow:
+            return "Yellow"
+        case .purple:
+            return "Purple"
+        case .orange:
+            return "Orange"
+        default:
+            return nil
+        }
     }
 }
