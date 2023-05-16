@@ -103,7 +103,6 @@
                                 <connections>
                                     <action selector="CheckDropDownSelected:" destination="Y6x-UF-I5h" eventType="editingDidEnd" id="ZJM-zf-9IL"/>
                                     <action selector="clickCheckAnswer:" destination="Y6x-UF-I5h" eventType="touchUpInside" id="l9l-xO-8nt"/>
-                                    <segue destination="c0V-D4-lqb" kind="show" id="dLl-T4-lXp"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GF2-Jg-qWl">
@@ -226,7 +225,7 @@
         <!--No Time Remaining View Controller-->
         <scene sceneID="9p1-nj-cB2">
             <objects>
-                <viewController id="0Sw-5o-vht" customClass="NoTimeRemainingViewController" customModule="Apps_Dev_iOS_Assignment3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoTimeRemainingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Sw-5o-vht" customClass="NoTimeRemainingViewController" customModule="Apps_Dev_iOS_Assignment3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3d6-Ss-aAh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +284,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shapelingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T75-Fh-xGH">
-                                <rect key="frame" x="128.66666666666666" y="103" width="135.99999999999997" height="34"/>
+                                <rect key="frame" x="128.66666666666666" y="59" width="135.99999999999997" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

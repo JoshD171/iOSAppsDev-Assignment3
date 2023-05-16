@@ -109,14 +109,13 @@ class GameViewController: UIViewController {
                     self?.navigationController?.pushViewController(resultsViewController, animated: true)
                     resultsViewController.navigationItem.setHidesBackButton(true, animated: true)
                 }
+                
             }))
             present(alert, animated: true, completion: nil)
-
-            if remainingTime == 0 && !isCorrectShape && !isCorrectColor {
-                let noTimeRemainingViewController = storyboard?.instantiateViewController(identifier: "NoTimeRemainingViewController") as! NoTimeRemainingViewController
-                navigationController?.pushViewController(noTimeRemainingViewController, animated: true)
-                noTimeRemainingViewController.navigationItem.setHidesBackButton(true, animated: true)
-            }
+        
+        if remainingTime == 0 && !isCorrectShape && !isCorrectColor {
+            showNoTimeRemainingViewController()
+        }
 
             if isCorrectColor && isCorrectShape {
                 timer.invalidate()
@@ -130,13 +129,19 @@ class GameViewController: UIViewController {
                 updateButtonInteraction()
 
                 // Restart the timer for the next level
-                remainingTime = 30
+                self.remainingTime = 30
                 timerLabel.text = "Time: \(remainingTime)"
                 timerLabel.textColor = .black
                 timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                     self.countdown()
                 }
             }
+    }
+    
+    private func showNoTimeRemainingViewController() {
+        let noTimeRemainingViewController = storyboard?.instantiateViewController(identifier: "NoTimeRemainingViewController") as! NoTimeRemainingViewController
+        navigationController?.pushViewController(noTimeRemainingViewController, animated: true)
+        noTimeRemainingViewController.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     func countdown() {
@@ -147,10 +152,7 @@ class GameViewController: UIViewController {
         }
         if remainingTime == 0 {
             timer.invalidate()
-            
-            let vc = storyboard?.instantiateViewController(identifier: "ResultsViewController") as! ResultsViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-            vc.navigationItem.setHidesBackButton(true, animated: true)
+            showNoTimeRemainingViewController()
         }
     }
     
