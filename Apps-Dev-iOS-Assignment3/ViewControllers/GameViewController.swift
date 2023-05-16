@@ -197,7 +197,7 @@ class GameViewController: UIViewController {
              UIAction(title: "Blue", handler: colourButtonClosure),
              UIAction(title: "Orange", handler: colourButtonClosure)
          ])
-         colourDropDown.showsMenuAsPrimaryAction = true
+         colourDropDown.showsMenuAsPrimaryAction = false
     }
     
     
