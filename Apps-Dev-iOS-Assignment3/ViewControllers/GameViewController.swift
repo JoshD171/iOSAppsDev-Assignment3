@@ -83,8 +83,6 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func clickCheckAnswer(_ sender: UIButton) {
-        timer.invalidate()
-       
         let selectedColor = colourDropDown.title(for: .normal) ?? ""
             let selectedShape = shapeDropDown.title(for: .normal) ?? ""
 
@@ -104,7 +102,7 @@ class GameViewController: UIViewController {
                 }
             }
 
-            let alert = UIAlertController(title: "Result", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Result", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
                 if isCorrectShape && isCorrectColor {
                     let resultsViewController = self?.storyboard?.instantiateViewController(identifier: "ResultsViewController") as! ResultsViewController
@@ -113,25 +111,32 @@ class GameViewController: UIViewController {
                 }
             }))
             present(alert, animated: true, completion: nil)
-        
-        if isCorrectColor && isCorrectShape {
-            
-            // Generate a new random shape for the next level
-            let nextShape = generateRandomShape()
-            shapeDropDown.setTitle("", for: .normal)
-            colourDropDown.setTitle("", for: .normal)
-            
-            // Update the button interaction state
-            updateButtonInteraction()
-            
-            // Restart the timer for the next level
-            remainingTime = 30
-            timerLabel.text = "Time: \(remainingTime)"
-            timerLabel.textColor = .black
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                self.countdown()
+
+            if remainingTime == 0 && !isCorrectShape && !isCorrectColor {
+                let noTimeRemainingViewController = storyboard?.instantiateViewController(identifier: "NoTimeRemainingViewController") as! NoTimeRemainingViewController
+                navigationController?.pushViewController(noTimeRemainingViewController, animated: true)
+                noTimeRemainingViewController.navigationItem.setHidesBackButton(true, animated: true)
             }
-        }
+
+            if isCorrectColor && isCorrectShape {
+                timer.invalidate()
+
+                // Generate a new random shape for the next level
+                let nextShape = generateRandomShape()
+                shapeDropDown.setTitle("", for: .normal)
+                colourDropDown.setTitle("", for: .normal)
+
+                // Update the button interaction state
+                updateButtonInteraction()
+
+                // Restart the timer for the next level
+                remainingTime = 30
+                timerLabel.text = "Time: \(remainingTime)"
+                timerLabel.textColor = .black
+                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                    self.countdown()
+                }
+            }
     }
     
     func countdown() {

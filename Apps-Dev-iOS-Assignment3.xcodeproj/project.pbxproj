@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07674FC9C443857CA816F269 /* Pods_Apps_Dev_iOS_Assignment3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38849A56124A59718449667D /* Pods_Apps_Dev_iOS_Assignment3.framework */; };
 		2A936A79C609B1B2E5D9D766 /* Pods_Apps_Dev_iOS_Assignment3Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494B099B7985CB0233B58670 /* Pods_Apps_Dev_iOS_Assignment3Tests.framework */; };
+		826551492A13A99200FD2BC7 /* NoTimeRemainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826551482A13A99200FD2BC7 /* NoTimeRemainingViewController.swift */; };
 		826AC2372A11C9EB003F9034 /* DropDownOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826AC2362A11C9EB003F9034 /* DropDownOptions.swift */; };
 		826C67E42A075B1D00F16F61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C67E32A075B1D00F16F61 /* HomeViewController.swift */; };
 		826C67E62A075BC200F16F61 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C67E52A075BC200F16F61 /* GameViewController.swift */; };
@@ -53,6 +54,7 @@
 		50A98166E5D16F76FA71972C /* Pods-Apps-Dev-iOS-Assignment3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apps-Dev-iOS-Assignment3Tests.release.xcconfig"; path = "Target Support Files/Pods-Apps-Dev-iOS-Assignment3Tests/Pods-Apps-Dev-iOS-Assignment3Tests.release.xcconfig"; sourceTree = "<group>"; };
 		581430D563CB8F37E6060094 /* Pods-Apps-Dev-iOS-Assignment3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apps-Dev-iOS-Assignment3.debug.xcconfig"; path = "Target Support Files/Pods-Apps-Dev-iOS-Assignment3/Pods-Apps-Dev-iOS-Assignment3.debug.xcconfig"; sourceTree = "<group>"; };
 		6E2D2F52CF9B544EEDB235CA /* Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests.release.xcconfig"; path = "Target Support Files/Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests/Pods-Apps-Dev-iOS-Assignment3-Apps-Dev-iOS-Assignment3UITests.release.xcconfig"; sourceTree = "<group>"; };
+		826551482A13A99200FD2BC7 /* NoTimeRemainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTimeRemainingViewController.swift; sourceTree = "<group>"; };
 		826AC2362A11C9EB003F9034 /* DropDownOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownOptions.swift; sourceTree = "<group>"; };
 		826C67E32A075B1D00F16F61 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		826C67E52A075BC200F16F61 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				826C67E52A075BC200F16F61 /* GameViewController.swift */,
 				826C67E72A075BCF00F16F61 /* ResultsViewController.swift */,
 				826C67E92A075C3D00F16F61 /* InstructionsViewController.swift */,
+				826551482A13A99200FD2BC7 /* NoTimeRemainingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				826C67EA2A075C3D00F16F61 /* InstructionsViewController.swift in Sources */,
 				826C67E82A075BCF00F16F61 /* ResultsViewController.swift in Sources */,
 				BA19C4FF2A0DBB55004BD475 /* Game.swift in Sources */,
+				826551492A13A99200FD2BC7 /* NoTimeRemainingViewController.swift in Sources */,
 				826AC2372A11C9EB003F9034 /* DropDownOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

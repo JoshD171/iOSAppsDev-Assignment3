@@ -1,48 +1,40 @@
 //
-//  ResultsViewController.swift
+//  NoTimeRemainingViewController.swift
 //  Apps-Dev-iOS-Assignment3
 //
-//  Created by Joshua D on 7/5/2023.
+//  Created by Joshua D on 16/5/2023.
 //
 
 import UIKit
 
-class ResultsViewController: UIViewController {
-    
-    
-    let mainGame = GameViewController()
+class NoTimeRemainingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        LevelNumber.text = "Level \(level)"
 
         // Do any additional setup after loading the view.
     }
     
     
-    @IBOutlet weak var LevelNumber: UILabel!
-    
-
+    @IBOutlet weak var RestartLevel: UIButton!
     
     
-    @IBAction func goToNextLevel(_ sender: UIButton) {
+    @IBAction func Restarting(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "GameViewController") as! GameViewController
         self.navigationController?.pushViewController(vc, animated: true)
-        level += 1
         vc.navigationItem.setHidesBackButton(true, animated: true)
     }
-    @IBAction func returnToHome(_ sender: UIButton) {
+    
+    
+    @IBOutlet weak var HomeOutlet: UIButton!
+    
+
+    @IBAction func ReturnHome(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    @IBOutlet weak var MoveToNextLevel: UIButton!
     
-   
     
-    @IBOutlet weak var GoBackHome: UIButton!
-    
-
     /*
     // MARK: - Navigation
 
