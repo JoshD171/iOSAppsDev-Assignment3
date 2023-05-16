@@ -100,22 +100,6 @@ class GameViewController: UIViewController {
             }))
             present(alert, animated: true, completion: nil)
         
-
-            // Generate a new random shape for the next level
-            let nextShape = generateRandomShape()
-            shapeDropDown.setTitle("", for: .normal)
-            colourDropDown.setTitle("", for: .normal)
-
-            // Update the button interaction state
-            updateButtonInteraction()
-
-            // Restart the timer for the next level
-            remainingTime = 30
-            timerLabel.text = "Time: \(remainingTime)"
-            timerLabel.textColor = .black
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                self.countdown()
-            }
     }
     
     func countdown() {
