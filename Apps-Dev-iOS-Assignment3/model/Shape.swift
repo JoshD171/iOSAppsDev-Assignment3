@@ -1,12 +1,16 @@
 import Foundation
 import UIKit
 
-enum ShapeType {
+enum ShapeType: String, CaseIterable {
     case circle
     case square
     case triangle
     case pentagon
     case hexagon
+    
+    var description: String {
+            return rawValue
+        }
 }
 
 class ShapeView: UIView {
@@ -22,6 +26,7 @@ class ShapeView: UIView {
         super.init(coder: coder)
         self.backgroundColor = UIColor.clear
     }
+    
     
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
@@ -58,7 +63,8 @@ class ShapeView: UIView {
             }
             context.closePath()
         }
-        
+
         context.fillPath()
     }
+    
 }

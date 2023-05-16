@@ -165,7 +165,7 @@
                                                 <command title="Square" id="Mhk-U1-G0Z"/>
                                             </children>
                                         </menu>
-                                        <state key="normal" title="Shape" image="squareshape" catalog="system">
+                                        <state key="normal" title="Shape">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -354,7 +354,6 @@
     </scenes>
     <resources>
         <image name="highlighter" catalog="system" width="128" height="120"/>
-        <image name="squareshape" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

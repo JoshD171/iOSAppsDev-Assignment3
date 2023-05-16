@@ -15,7 +15,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var LevelValue: UILabel!
     
-    @IBOutlet weak var ShapeView: UIImageView!
+    @IBOutlet weak var ShapeView: ShapeView!
     
     @IBOutlet weak var CheckForCorrectAnswer: UIButton!
     
@@ -34,20 +34,24 @@ class GameViewController: UIViewController {
     
     
     
-    
-    
-    var currentShape = Shape()
+
     var timer = Timer()
     var remainingTime = 30
-    
+    var currentShape: ShapeView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.isHidden = true
         setupShapeDropDown()
         setupColourDropDown()
         updateButtonInteraction()
+        
+        currentShape = generateRandomShape()
+        currentShape.frame = ShapeView.bounds
+        ShapeView.addSubview(currentShape)
         
         LevelValue.text = "Level \(level)"
         
@@ -56,24 +60,52 @@ class GameViewController: UIViewController {
         }
     }
     
+    private func generateRandomShape() -> ShapeView {
+        let shapeTypes: [ShapeType] = [.circle, .square, .triangle, .pentagon, .hexagon]
+        let colors: [UIColor] = [.red, .green, .yellow, .purple, .blue, .orange]
+
+        let randomShapeType = shapeTypes.randomElement() ?? .circle
+        let randomColor = colors.randomElement() ?? .red
+
+        let shapeView = Apps_Dev_iOS_Assignment3.ShapeView()
+        shapeView.shapeType = randomShapeType
+        shapeView.color = randomColor
+
+        return shapeView
+    }
+    
     @IBAction func clickCheckAnswer(_ sender: UIButton) {
         timer.invalidate()
        
-        // Check if color and shape match the current shape
-            let selectedColor = colourDropDown.title(for: .normal) ?? ""
+        let selectedColor = colourDropDown.title(for: .normal) ?? ""
             let selectedShape = shapeDropDown.title(for: .normal) ?? ""
-            
-            let correctColor = currentShape.color.description // Convert UIColor to string
-            let correctShape = currentShape.shape
-            
+
+            let correctColor = currentShape.color.description
+            let correctShape = currentShape.shapeType.description
+
             let isCorrect = selectedColor == correctColor && selectedShape == correctShape
-            
+
             let message = isCorrect ? "Correct!" : "Incorrect!"
-            
+
             let alert = UIAlertController(title: "Result", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
-        
+
+        // Generate a new random shape for the next level
+            let nextShape = generateRandomShape()
+            shapeDropDown.setTitle("", for: .normal)
+            colourDropDown.setTitle("", for: .normal)
+
+            // Update the button interaction state
+            updateButtonInteraction()
+
+            // Restart the timer for the next level
+            remainingTime = 30
+            timerLabel.text = "Time: \(remainingTime)"
+            timerLabel.textColor = .black
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                self.countdown()
+            }
     }
     
     func countdown() {
@@ -129,7 +161,9 @@ class GameViewController: UIViewController {
         let shapeButtonClosure = { [weak self] (action: UIAction) in
                 guard let self = self else { return }
                 self.shapeDropDown.setTitle(action.title, for: .normal)
-                self.currentShape.shape = action.title // Update current shape
+                let randomShape = ShapeType.allCases.randomElement() ?? .circle
+                self.currentShape.shapeType = randomShape // Update current shape type
+                self.ShapeView.setNeedsDisplay() // Update the shape view
                 self.updateButtonInteraction() // Update button interaction state
             }
          
@@ -184,4 +218,17 @@ class GameViewController: UIViewController {
         
     }
 
+}
+
+extension UIView {
+    func toImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        if let context = UIGraphicsGetCurrentContext() {
+            layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            return image
+        }
+        return nil
+    }
 }
