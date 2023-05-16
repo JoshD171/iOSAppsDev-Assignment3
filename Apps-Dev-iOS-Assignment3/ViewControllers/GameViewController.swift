@@ -171,9 +171,10 @@ class GameViewController: UIViewController {
 
          shapeDropDown.menu = UIMenu(children: [
              UIAction(title: "Circle", handler: shapeButtonClosure),
+             UIAction(title: "Square", handler: shapeButtonClosure),
              UIAction(title: "Triangle", handler: shapeButtonClosure),
-             UIAction(title: "Rectangle", handler: shapeButtonClosure),
-             UIAction(title: "Square", handler: shapeButtonClosure)
+             UIAction(title: "Pentagon", handler: shapeButtonClosure),
+             UIAction(title: "Hexagon", handler: shapeButtonClosure)
          ])
          shapeDropDown.showsMenuAsPrimaryAction = true
      }

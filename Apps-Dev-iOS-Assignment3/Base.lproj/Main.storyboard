@@ -130,8 +130,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button toolTip="Type of Colour" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZ2-6X-yea">
-                                        <rect key="frame" x="102" y="168" width="86" height="30"/>
+                                    <button toolTip="Type of Colour" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZ2-6X-yea">
+                                        <rect key="frame" x="79" y="168" width="123" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <menu key="menu" title="Colours" id="QeO-QB-XJG">
@@ -148,26 +148,33 @@
                                         <state key="normal" title="Colours" image="highlighter" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Colours" cornerStyle="fixed">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="colourChecker:" destination="Y6x-UF-I5h" eventType="primaryActionTriggered" id="OUh-Fc-o4z"/>
                                         </connections>
                                     </button>
-                                    <button toolTip="Type of Shape" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-fK-NXN">
-                                        <rect key="frame" x="99" y="55" width="84" height="30"/>
+                                    <button toolTip="Type of Shape" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-fK-NXN">
+                                        <rect key="frame" x="79" y="55" width="123" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <menu key="menu" title="Shapes" id="Sfh-tf-Gzz">
                                             <menuOptions key="menuOptions" singleSelection="YES"/>
                                             <children>
                                                 <command title="Circle" id="Dgs-W2-TRs"/>
-                                                <command title="Triangle" id="rLt-Uf-BAz"/>
-                                                <command title="Rectangle" id="B7j-SM-3jn"/>
-                                                <command title="Square" id="Mhk-U1-G0Z"/>
+                                                <command title="Square" id="rLt-Uf-BAz"/>
+                                                <command title="Triangle" id="B7j-SM-3jn"/>
+                                                <command title="Pentagon" id="Mhk-U1-G0Z"/>
+                                                <command title="Hexagon" id="S0e-pK-AcR"/>
                                             </children>
                                         </menu>
-                                        <state key="normal" title="Shape">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Shapes" cornerStyle="fixed">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="shapeChecker:" destination="Y6x-UF-I5h" eventType="primaryActionTriggered" id="a9V-bz-smu"/>
                                         </connections>
