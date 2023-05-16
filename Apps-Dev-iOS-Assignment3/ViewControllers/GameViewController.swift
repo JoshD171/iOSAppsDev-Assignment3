@@ -175,7 +175,7 @@ class GameViewController: UIViewController {
              UIAction(title: "Rectangle", handler: shapeButtonClosure),
              UIAction(title: "Square", handler: shapeButtonClosure)
          ])
-         shapeDropDown.showsMenuAsPrimaryAction = true
+         shapeDropDown.showsMenuAsPrimaryAction = false
      }
 
      func setupColourDropDown() {
@@ -196,7 +196,7 @@ class GameViewController: UIViewController {
              UIAction(title: "Blue", handler: colourButtonClosure),
              UIAction(title: "Orange", handler: colourButtonClosure)
          ])
-         colourDropDown.showsMenuAsPrimaryAction = true
+         colourDropDown.showsMenuAsPrimaryAction = false
     }
     
     
