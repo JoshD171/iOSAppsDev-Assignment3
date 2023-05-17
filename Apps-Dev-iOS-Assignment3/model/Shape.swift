@@ -39,7 +39,7 @@ class ShapeView: UIView {
         case .circle:
             context.addEllipse(in: CGRect(x: 75, y: 10, width: 150, height: 150))
         case .square:
-            context.addRect(rect)
+            context.addRect(CGRect(x: 75, y: 10, width: 150, height: 150))
         case .triangle:
             context.move(to: CGPoint(x: rect.midX, y: rect.minY))
             context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))

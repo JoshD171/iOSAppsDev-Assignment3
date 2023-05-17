@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2A-EB-jHm">
-                                <rect key="frame" x="116" y="302" width="151" height="63"/>
+                                <rect key="frame" x="116" y="301" width="151" height="63"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="8KK-f7-aPY"/>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwb-yl-Zfi">
-                                <rect key="frame" x="116" y="395" width="151" height="63"/>
+                                <rect key="frame" x="116" y="394" width="151" height="64"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -186,16 +186,15 @@
                                 <color key="textColor" name="white"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NND-KC-mTB">
-                                <rect key="frame" x="301" y="108" width="65" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="co2-GM-Sdr"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02d-Qa-PAk">
+                                <rect key="frame" x="298" y="103" width="79" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Exit"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="End"/>
                                 <connections>
-                                    <action selector="returnToHome:" destination="c0V-D4-lqb" eventType="touchUpInside" id="Q25-ot-QeO"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="KK2-Oz-4Ku"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="1of-Xb-n5F"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -440,8 +439,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d9t-nQ-z2U"/>
-        <segue reference="KK2-Oz-4Ku"/>
+        <segue reference="9Zi-S6-1aC"/>
+        <segue reference="1of-Xb-n5F"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="highlighter" catalog="system" width="128" height="120"/>
