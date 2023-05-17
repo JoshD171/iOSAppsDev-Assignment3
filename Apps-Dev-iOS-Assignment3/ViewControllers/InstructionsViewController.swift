@@ -15,6 +15,11 @@ class InstructionsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBOutlet weak var StartGameButton: UIButton!
+    
+    
+    
 
     /*
     // MARK: - Navigation
