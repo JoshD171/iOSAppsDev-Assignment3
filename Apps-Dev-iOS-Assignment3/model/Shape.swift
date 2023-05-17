@@ -41,9 +41,9 @@ class ShapeView: UIView {
         case .square:
             context.addRect(CGRect(x: 75, y: 10, width: 150, height: 150))
         case .triangle:
-            context.move(to: CGPoint(x: rect.midX, y: rect.minY))
-            context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-            context.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+            context.move(to: CGPoint(x: 150, y: 0))
+            context.addLine(to: CGPoint(x: 75, y: 125))
+            context.addLine(to: CGPoint(x: 225, y: 125))
             context.closePath()
         case .pentagon:
             let center = CGPoint(x: rect.width / 2, y: rect.height / 2)
