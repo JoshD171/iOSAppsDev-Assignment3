@@ -15,18 +15,18 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Apps_Dev_iOS_Assignment3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shapelingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBk-up-jqM">
-                                <rect key="frame" x="126" y="72" width="141" height="35"/>
+                                <rect key="frame" x="126" y="13" width="141" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2A-EB-jHm">
-                                <rect key="frame" x="116" y="301" width="151" height="63"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2A-EB-jHm">
+                                <rect key="frame" x="116" y="316" width="151" height="63"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="8KK-f7-aPY"/>
@@ -38,8 +38,8 @@
                                     <segue destination="jZb-Ra-h0E" kind="show" id="uGU-DD-hER"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwb-yl-Zfi">
-                                <rect key="frame" x="116" y="394" width="151" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwb-yl-Zfi">
+                                <rect key="frame" x="116" y="409" width="151" height="61"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -67,30 +67,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="-11"/>
+            <point key="canvasLocation" x="925.95419847328242" y="-11.267605633802818"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="shx-De-Rwe">
             <objects>
                 <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6x-UF-I5h" customClass="GameViewController" customModule="Apps_Dev_iOS_Assignment3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e5s-W0-rcG">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shapelingo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSR-lo-1wM">
-                                <rect key="frame" x="128" y="59" width="137" height="34"/>
+                                <rect key="frame" x="128" y="0.0" width="137" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yu6-1u-rZc">
-                                <rect key="frame" x="171" y="114" width="62" height="26"/>
+                                <rect key="frame" x="171" y="55" width="62" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identify the correct colour and shape" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm6-cU-zn5">
-                                <rect key="frame" x="56" y="169" width="281" height="21"/>
+                                <rect key="frame" x="56" y="110" width="281" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -106,7 +106,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GF2-Jg-qWl">
-                                <rect key="frame" x="56" y="223" width="281" height="188"/>
+                                <rect key="frame" x="56" y="164" width="281" height="188"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="188" id="8Ep-r6-TXb"/>
                                 </constraints>
@@ -181,7 +181,7 @@
                                 </subviews>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgv-hK-bmn">
-                                <rect key="frame" x="16" y="64" width="85" height="24"/>
+                                <rect key="frame" x="16" y="5" width="85" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" name="white"/>
                                 <nil key="highlightedColor"/>
@@ -262,7 +262,7 @@
                                 <rect key="frame" x="128" y="404" width="136" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Restart"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Retry"/>
                                 <connections>
                                     <action selector="Restarting:" destination="0Sw-5o-vht" eventType="touchUpInside" id="lqa-3a-xGQ"/>
                                 </connections>
@@ -371,7 +371,7 @@
             <objects>
                 <viewController storyboardIdentifier="InstructionsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jZb-Ra-h0E" customClass="InstructionsViewController" customModule="Apps_Dev_iOS_Assignment3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vk5-Am-nyg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shapelingo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lp-qr-lh1">
@@ -391,15 +391,15 @@
                                 <size key="shadowOffset" width="0.0" height="-6"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKZ-jR-a4b">
-                                <rect key="frame" x="28" y="286" width="327" height="234"/>
+                                <rect key="frame" x="28" y="286" width="327" height="301"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">In every level, a certain shape and colour will appear. You will need to identify the correct shape and the correct colour from the dropdown menus. When you check your answer, if you have identified the correct shape and colour you can proceed to the next level otherwise it will ask you to try again. You have 30 seconds to identify the correct shape and colour.</string>
+                                <mutableString key="text">In every level, a certain shape and colour will appear. You will need to identify the correct shape and the correct colour from the dropdown menus. When you check your answer, if you have identified the correct shape and colour you can proceed to the next level otherwise it will ask you to try again. You have 30 seconds to identify the correct shape and colour on Level 1. The difficulty will gradually increase, and the time for each level will be reduced by 5 seconds (min 5 seconds). </mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vk3-4Q-a2F">
-                                <rect key="frame" x="134" y="590" width="125" height="52"/>
+                                <rect key="frame" x="134" y="643" width="125" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Play Game"/>
@@ -418,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9q-un-8ib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="753"/>
+            <point key="canvasLocation" x="925.95419847328242" y="752.81690140845069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u6k-b9-SzU">

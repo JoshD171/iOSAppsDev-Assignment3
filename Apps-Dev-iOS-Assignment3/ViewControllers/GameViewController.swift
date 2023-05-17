@@ -46,6 +46,11 @@ class GameViewController: UIViewController {
         ShapeView.addSubview(currentShape)
         
         LevelValue.text = "Level \(level)"
+        remainingTime = 30 - 5 * (level-1)
+        if remainingTime < 6 {
+            remainingTime = 5
+        }
+        timerLabel.text = "Time: \(remainingTime)"
         
         // Start game timer
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
