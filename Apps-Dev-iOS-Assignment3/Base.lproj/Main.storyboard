@@ -194,6 +194,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="End"/>
                                 <connections>
+                                    <action selector="clickExit:" destination="Y6x-UF-I5h" eventType="touchUpInside" id="AGb-tC-osa"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="1of-Xb-n5F"/>
                                 </connections>
                             </button>

@@ -72,6 +72,11 @@ class GameViewController: UIViewController {
         return shapeView
     }
     
+    // Stop timer when exit
+    @IBAction func clickExit(_ sender: UIButton) {
+        timer.invalidate()
+    }
+    
     @IBAction func clickCheckAnswer(_ sender: UIButton) {
         
         // Check answer after player choose the type of shape and its color
