@@ -37,7 +37,7 @@ class ShapeView: UIView {
 
         switch shapeType {
         case .circle:
-            context.addEllipse(in: rect)
+            context.addEllipse(in: CGRect(x: 75, y: 10, width: 150, height: 150))
         case .square:
             context.addRect(rect)
         case .triangle:
