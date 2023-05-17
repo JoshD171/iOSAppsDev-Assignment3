@@ -8,10 +8,12 @@
 import UIKit
 
 class NoTimeRemainingViewController: UIViewController {
-
+    let mainGame = GameViewController()
+    
+    @IBOutlet weak var levellabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        levellabel.text = "You have reached Level \(level)"
         // Do any additional setup after loading the view.
     }
     
