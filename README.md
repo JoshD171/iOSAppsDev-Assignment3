@@ -24,6 +24,10 @@
 ### Result Pop-up: Incorrect Shape
 <img width="431" alt="Screenshot 2023-05-18 at 1 26 32 PM" src="https://github.com/JoshD171/iOSAppsDev-Assignment3/assets/84566808/69c78655-2211-4c34-9a82-bfa56b028dde">
 
+### Winning Screen
+<img width="439" alt="Screenshot 2023-05-18 at 1 37 18 PM" src="https://github.com/JoshD171/iOSAppsDev-Assignment3/assets/84566808/f59d6c56-2277-42d0-aed6-97d2f72bc331">
+
+
 ## Group Member
 - Wei Chen (13773698)
 - Joshua Dinkin (13894985)
