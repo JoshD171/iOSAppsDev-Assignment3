@@ -2,6 +2,6 @@
 
 ## Group Member
 - Wei Chen (13773698)
-- Joshua Dinkin
+- Joshua Dinkin (13894985)
 - Isabelle Brian
 - Binglin Fan (13384603)
