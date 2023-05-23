@@ -15,7 +15,7 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LevelNumber.text = "Level \(level)"
+        LevelNumber.text = "YOU PASSED LEVEL \(level)"
 
         // Do any additional setup after loading the view.
     }
