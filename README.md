@@ -34,4 +34,4 @@ Shapelingo is an app that allow young kids to learn about shape and color throug
 <img width="431" alt="Screenshot 2023-05-18 at 1 26 32 PM" src="https://github.com/JoshD171/iOSAppsDev-Assignment3/assets/84566808/69c78655-2211-4c34-9a82-bfa56b028dde">
 
 ### Winning Screen
-<img width="439" alt="Screenshot 2023-05-18 at 1 37 18 PM" src="https://github.com/JoshD171/iOSAppsDev-Assignment3/assets/84566808/f59d6c56-2277-42d0-aed6-97d2f72bc331">
+<img width="439" alt="Screenshot 2023-05-18 at 1 37 18 PM" src="https://github.com/JoshD171/iOSAppsDev-Assignment3/assets/42637312/28cc9577-bdf3-4c77-a45c-7a35a002b256">
