@@ -33,6 +33,7 @@ class ResultsViewController: UIViewController {
     }
     @IBAction func returnToHome(_ sender: UIButton) {
         // Return to the Main screen
+        level = 1 // Reset the level
         self.navigationController?.popToRootViewController(animated: true)
     }
     

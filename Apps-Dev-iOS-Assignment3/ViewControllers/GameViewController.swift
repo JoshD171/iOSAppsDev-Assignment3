@@ -79,6 +79,7 @@ class GameViewController: UIViewController {
     
     // Stop timer when exit
     @IBAction func clickExit(_ sender: UIButton) {
+        level = 1
         timer.invalidate()
     }
     

@@ -32,6 +32,7 @@ class NoTimeRemainingViewController: UIViewController {
     
 
     @IBAction func ReturnHome(_ sender: Any) {
+        level = 1
         self.navigationController?.popToRootViewController(animated: true)
     }
     
