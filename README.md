@@ -1,10 +1,13 @@
 # iOSAppsDev-Assignment3
 Shapelingo is an app that allow young kids to learn about shape and color through an interactive environment.
 
+# GitHub Repositry Link
+https://github.com/JoshD171/iOSAppsDev-Assignment3
+
 ## Group Member
 - Wei Chen (13773698)
 - Joshua Dinkin (13894985)
-- Isabelle Brian
+- Isabelle Brian (14270375)
 - Binglin Fan (13384603)
 
 
